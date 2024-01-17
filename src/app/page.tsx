@@ -15,9 +15,13 @@ export default async function Home() {
       <h1>날씨 앱</h1>
       <RevalidateButton tag="time" />
       <ul className={style.list}>
-        {cities.map((city) => {
-          return (<CurrentWeatherItem key={city.code} cityCode={city.code} cityName={city.name} />)
-        })}
+        {
+          cities.map((city) => {
+            return (
+              <CurrentWeatherItem key={city.code} cityCode={city.code} cityName={city.name} />
+            )
+          })
+        }
       </ul>
     </>
   )

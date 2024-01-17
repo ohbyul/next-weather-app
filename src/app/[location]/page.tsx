@@ -4,7 +4,7 @@ import HomeButton from '@/components/HomeButton'
 import RevalidateButton from '@/components/RevalidateButton'
 
 import style from './style.module.css'
-import { getForecastWeather } from '@/utils/getCurrentWeather'
+import { getForecastWeather } from '@/utils/getWeather'
 
 type Props = {
   params: {
@@ -35,10 +35,7 @@ export default async function Detail({ params, searchParams }: Props) {
       </div>
       <div className={style.header}>
         <span>현재 날씨 -</span>{' '}
-        <CurrentWeatherCondition
-          timeZone={location.tz_id}
-          conditionText={current.condition.text}
-          conditionIcon={current.condition.icon}
+        <CurrentWeatherCondition timeZone={location.tz_id} conditionText={current.condition.text} conditionIcon={current.condition.icon}
         />
       </div>
       <ul>
